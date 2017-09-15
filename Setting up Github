@@ -1,3 +1,7 @@
+users :
+email-id -
+email-id -
+
 ## Overview
 
 In this exercise each participant configures and tests a local development environment.
@@ -52,7 +56,7 @@ https://help.github.com/articles/generating-ssh-keys/
 * git clone https://github.com/indranilroyaiem/Github-setup.git
 * cd Github-setup
 * git remote -v
-* update README.md with your name and email address once cloned.
+* update README.md with your email address once cloned.
 * git status
 
 ### Verify that you see that you have modifed README.md 
@@ -129,5 +133,10 @@ You should have an updated TEAM-repo with
 *update the readme.md file with problems faced and solutions during the process in problems section at last
 
 ##Problems section:
+
+
+Git command cheat sheet references:
+http://www.delphicdigital.com/blog/git-commands-cheat-sheet
+https://www.git-tower.com/blog/git-cheat-sheet/
 
 
