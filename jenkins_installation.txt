@@ -1,0 +1,56 @@
+1. Update Your System:
+sudo yum install epel-release
+sudo yum update
+sudo reboot  
+
+2.	Java Installation (Necessary For Jenkins):
+
+       sudo yum install java-1.8.0-openjdk.x86_64
+       java –version(To Check Java Version)
+       
+3.	Set The Environment Variable:
+sudo cp /etc/profile /etc/profile_backup
+     echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' | 
+       sudo tee -a      /etc/profile
+     echo 'export JRE_HOME=/usr/lib/jvm/jre' | sudo tee -a /etc/profile
+4.	echo $JAVA_HOME
+echo $JRE_HOME( To See the path we have set for variable)
+
+5.	Jenkins Installation:
+
+    cd ~
+   sudo wget -O /etc/yum.repos.d/jenkins.repo 
+    http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+     sudo rpm --import 
+       http://pkg.jenkins-ci.org/redhat-stable/jenkins- ci.org.key
+     sudo yum install Jenkins
+
+Ex: http:// 192.168.159.131:8080
+
+
+
+
+6.	In order to facilitate visitors' access to Jenkins, you can setup an Nginx reverse proxy for Jenkins, so visitors will no longer need to key in the port number 8080 when accessing your Jenkins application.
+- sudo yum install Nginx
+ Modify Configuration Nginx:
+      sudo vi /etc/nginx/nginx.conf
+	Edit the file Find location and put below code:
+	location / {
+    proxy_pass http://127.0.0.1:8080;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+7.	Start Nginx Service.
+8.	Now you can access without using port 8080.
+Ex: http:// 192.168.159.131
+
+
+
+
+
+
+
+
